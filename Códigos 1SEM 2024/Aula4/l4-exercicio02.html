@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula04 - Exercício02</title>
+</head>
+<body>
+
+    <h3>Controle de Refri</h3>
+
+    Latinhas de refri por dia: <input type="text" id="input_latinha">
+    <button onclick="controlerefri()">Quantos refris?</button>
+    <div id="div_refri"></div>
+
+</body>
+</html>
+
+<script>
+
+    function controlerefri(){
+        var refri = Number(input_latinha.value)
+        var controle = refri*365
+
+        div_refri.innerHTML = `Você consome ${controle} latinhas de refrigerantes por ano.`
+
+        if(controle > 500){
+            div_refri.innerHTML += "<br> Cuidado com a diabetes!"
+        }
+
+    }
+
+</script>

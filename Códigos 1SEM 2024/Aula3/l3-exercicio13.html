@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista03-Exercício13</title>
+</head>
+<body>
+
+    <h3>Vale Transporte</h3>
+
+    Valor da passagem de ônibus: <input id="input_valor"><br><br>
+    Quantidade de viagens por mês: <input id="input_viagens"><br><br>
+    Distância entre trabalho e casa: <input id="input_distancia"><br><br>
+    <button>Calcular VT</button>    
+    
+</body>
+</html>
+
+<script>
+
+    function valetransporte() {
+
+        //   Você vai gastar R$X por mês com transporte.  Obs: considere que uma viagem de Uber (99, cabify, etc) custa R$0,75 por km (ou seja, uma viagem de 10km custará R$7,50).  Obs: considere que o número de viagens de Uber (99, cabify, etc) que o usuário faz por mês é de 10% do número de viagens de ônibus (ou seja, se ele indicar que faz 50 viagens, considere 45 de ônibus e 5 de transporte de aplicativo). 
+
+        var passagem = input_valor.value
+        var viagens = input_viagens.value
+        var distancia = input_distancia.value
+        var onibus = passagem * viagens
+        var aplicativo = distancia * 0.75
+        var calculo = viagens * 0.1
+
+        alert(`Você vai gastar R$ por mês com transporte.`)
+
+    }
+
+</script>

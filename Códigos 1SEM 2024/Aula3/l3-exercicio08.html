@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista03_Exercicio08</title>
+</head>
+<body>
+
+    <h3>Saldo Bancário</h3>
+
+    Valor: <input id="input_valor">
+    <button onclick="depositar()">Deposito</button>
+    <button onclick="retirar()">Retirada</button>
+
+    <div id="div_saldo"></div>
+
+</body>
+</html>
+
+<script>
+    var valor = 0
+    var saldo = 0
+
+    function depositar() {
+        valor = Number(input_valor.value)
+        saldo += valor
+
+        div_saldo.innerHTML += `<br> Depósito de R$${valor} efetuado! Saldo atual: R$${saldo}`
+    }
+
+    function retirar() {
+        valor = Number(input_valor.value)
+        saldo -= valor
+
+        div_saldo.innerHTML += `<br> Retirada de R$${valor} efetuada! Saldo atual: R$${saldo}`
+    }
+
+</script>

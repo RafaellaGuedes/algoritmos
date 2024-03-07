@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        
+    Nome: <input id="input_nome"><br><br>
+    Idade: <input id="input_idade"><br><br>
+
+    <button onclick="ver()">Ver Dados</button> <br><br>
+
+    <div id="div_mensagem"></div>
+    
+
+</body>
+</html>
+
+<script>
+
+    function ver(){
+
+        var nome = input_nome.value
+        var idade = input_idade.value
+
+        //o = reatribui o valor e apaga o antigo
+        // o += atribui valor após o antigo
+
+        div_mensagem.innerHTML += `<br>Meu nome é ${nome}, e minha idade é ${idade} anos.`;
+
+        //alert(`Meu nome é ${nome}, e minha idade é ${idade}`) = INTERPOLAÇÃO
+        //alert("Meu nome é "+nome+", e minha idade é "+idade) = CONCATENAÇÃO
+    }
+
+</script>

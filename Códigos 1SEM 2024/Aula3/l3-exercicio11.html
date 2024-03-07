@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista03-Exercício11</title>
+</head>
+<body>
+
+    <h3>Tabuada</h3>
+    
+    Insira o número para ver a tabuada: <input id="input_tab">
+    <button onclick="tabuada()">Ver Tabuada</button>
+
+</body>
+</html>
+
+<script>
+
+    function tabuada(){
+
+        var numero = Number(input_tab.value)
+        var dois = numero*2
+        var tres = numero*3
+        var quatro = numero*4
+        var cinco = numero*5
+        var seis = numero*6
+        var sete = numero*7
+        var oito = numero*8
+        var nove = numero*9
+
+        alert(`${numero}x1=${numero}
+${numero}x2=${dois}
+${numero}x3=${tres}
+${numero}x4=${quatro}
+${numero}x5=${cinco}
+${numero}x6=${seis}
+${numero}x7=${sete}
+${numero}x8=${oito}
+${numero}x9=${nove}`)
+
+    }
+
+</script>

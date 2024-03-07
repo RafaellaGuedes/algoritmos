@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador Financeiro</title>
+
+    <style>
+
+        .fundo{
+           margin: 50px; background-color: #6bcae2;
+        }
+
+        .p{
+            font-family: monospace; font-weight: bold; font-size: 15px;
+        }
+
+        .h{
+            font-family: monospace; font-weight: bold; text-align: center;
+        }
+
+        .mensagem{
+            font-family: monospace; font-size: 15px;
+        }
+        
+        .avisopos{
+            font-family: monospace; color: rgb(10, 2, 54); font-size: 15px;
+        }
+
+        .avisoneg{
+            font-family: monospace; color: rgb(150, 9, 9); font-size: 15px; font-weight: bold;
+        }
+
+     </style>
+
+</head>
+<body class="fundo">
+    
+    <h1 class="h">Controle do sistema Aquaponico</h1> <br><br>
+    <p class="p">Quantidade de tanques: <input type="text" id="input_tanques"></p>
+    <p class="p">Quantidade de peixes:  <input type="text" id="input_peixes"></p>
+    <p class="p">Quantidade de plantas: <input type="text" id="input_plantas"></p>
+    <p class="p">Lucro por planta: <input type="text" id="input_lucroplanta"></p>
+    <p class="p">Lucro por peixe: <input type="text" id="input_lucropeixe"></p>
+    <p class="p">Lucro Médio: <input type="text" id="input_lucromedio"></p>
+    <button onclick="calculo()">Calcular Finanças</button>
+    <div id="div_mensagem"></div>
+
+</body>
+</html>
+
+<script>
+
+    function calculo(){
+        var tanques = Number(input_tanques.value);
+        var peixes = Number(input_peixes.value);
+        var plantas = Number(input_plantas.value);
+        var lucroplanta = Number(input_lucroplanta.value);
+        var lucropeixe = Number(input_lucropeixe.value);
+        var mediadelucro = Number(input_lucromedio.value);
+        var quilos = peixes * 2;
+        var litros = tanques * 10000;
+        var calculoplanta = lucroplanta * plantas;
+        var calculopeixe = lucropeixe * peixes;
+        var lucro = calculoplanta + calculopeixe;
+        var aguaplanta = litros / plantas;
+        var avisolucro = lucro - mediadelucro;
+        
+
+        div_mensagem.innerHTML += `<p class="mensagem">Nessa safra você produziu ${plantas} plantas, lucrando R$${calculoplanta}, e produziu ${quilos}kg de peixes, lucrando R$${calculopeixe}, tendo um lucro total de R$${lucro}.</p>`
+
+        div_mensagem.innerHTML += `<p class="mensagem">Para produzir ${plantas} plantas, sua empresa utilizou ${litros}L de água no sistema, e produziu ${quilos}kg de peixes.</p>`
+
+        if(lucro > mediadelucro*2){
+        div_mensagem.innerHTML += `<p class="avisopos">Você teve um acrescimo de R$${avisolucro} nas suas finanças, que tal aumentar sua produção?</p>`
+        }
+
+        if(aguaplanta > 10){
+            div_mensagem.innerHTML += `<p class="avisoneg">Cuidado! Consumo de água muito alto, verifique se não há vazamentos em seu sistema.</p>`
+        }
+    }
+
+</script>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista03-Exercício12</title>
+</head>
+<body>
+    
+    <h3>PIZZA</h3>
+
+    Sabor: <input id="input_sabor">
+    Preço: <input id="input_preco"> <br><br>
+    Quantidade de amigos que irão comer: <input id="input_amigo">
+    <button onclick="valoramigo()">Ver valor por amigo</button> 
+
+</body>
+</html>
+
+<script>
+
+
+    function valoramigo() {
+    
+        var pizza = input_sabor.value;
+        var preco = Number(input_preco.value);
+        var amigo = Number(input_amigo.value);
+        var total = (preco * 0.1) + preco;   
+        var valoramigo = total / amigo;
+
+        alert(`Cada amigo vai colaborar com R$${valoramigo} para a pizza de ${pizza}`);
+
+}
+
+
+</script>

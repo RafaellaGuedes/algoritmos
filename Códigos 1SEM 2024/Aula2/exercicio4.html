@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h3>Super Sayajin</h3>
+
+    Nome do Guerreiro: <input id="input_nome"> <br><br>
+    Ki do Guerreiro: <input id="input_ki">
+
+    <button onclick="supers()">Ver Ki em cada forma</button>
+
+</body>
+</html>
+
+<script>
+
+    function supers() {
+            var nome = input_nome.value
+            var ki = input_ki.value
+
+            var supersay = 50 * ki
+            var supersay2 = 100 * ki
+
+        alert(nome+" sua forma Super Sayajin têm "+supersay+" de ki")
+        alert(nome+" sua forma Super Sayajin 2 têm "+supersay2+" de ki")
+}
+
+
+</script>

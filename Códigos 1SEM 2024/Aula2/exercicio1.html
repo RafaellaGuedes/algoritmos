@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula02-Exercício01</title>
+</head>
+<body>
+    
+<h3>Aposentadoria</h3>
+
+Idade homem: <input id="input_h"> 
+<Button onclick="aposentarh()">Aposentadoria H</Button> <br> <br>
+Idade mulher: <input id="input_m"> 
+<Button onclick="aposentarm()">Aposentadoria M</Button> <br> <br>
+
+
+</body>
+</html>
+
+<script>
+
+function aposentarh() {
+
+    var hom = input_h.value;
+    var calcularh = 70-hom
+
+    alert('Faltam '+calcularh+" anos para você se aposentar!")
+}
+
+function aposentarm() {
+
+var mul = input_m.value;
+var calcularm = 60-mul
+
+alert('Faltam '+calcularm+" anos para você se aposentar!")
+}
+
+</script>

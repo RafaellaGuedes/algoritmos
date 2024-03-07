@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista 04 - Exercício 07</title>
+</head>
+<body>
+    
+    <h3>Cheque Especial</h3>
+    <h4>Banco XPTO</h4>
+    Saldo da conta: <input id="ipt_saldo">
+    Valor do débito: <input id="ipt_debito">
+    <button onclick="calculocheque()">Analisar conta</button>
+    <div id="div_mensagem"></div>
+ 
+
+</body>
+</html>
+
+<script>
+
+    function calculocheque(){
+        var saldo = Number(ipt_saldo.value)
+        var debito = Number(ipt_debito.value)
+        var calculo = saldo - debito
+
+        if(calculo < 0){
+        div_mensagem.innerHTML = `<b style="color: red;">O saldo atual da conta corrente é ${calculo}</b>`
+        }
+
+        if(calculo >= 0){
+        div_mensagem.innerHTML = `O saldo atual da conta corrente é ${calculo}`
+        }
+    }
+
+</script>

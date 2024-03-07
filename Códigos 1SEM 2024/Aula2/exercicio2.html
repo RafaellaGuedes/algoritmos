@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula02-Exercício02</title>
+</head>
+<body>
+    
+    <h3>Hora da Pizza!</h3>
+
+    Valor da Pizza: <input id="input_valor"> <br><br>
+    Quantidade de pessoas: <input id="input_qnt"><br><br>
+
+    <button onclick="lovepizza()">#lovePizza</button>
+
+</body>
+</html>
+
+<script>
+
+    function lovepizza() {
+
+        var valor = input_valor.value
+        var qnt = input_qnt.value
+
+        var divisao = valor/qnt
+
+        alert ("Cada um dos "+qnt+" amigos vai pagar R$"+divisao)
+
+    }
+
+</script>

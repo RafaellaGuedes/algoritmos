@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista 04 - Exercício 17</title>
+</head>
+<body>
+    
+    <h1 style="font-family: monospace; margin-bottom: 0%;">Bom Doce</h1>
+    <h2 style="margin: 0%; font-family: monospace;">Mercado</h2>
+    Quantidade de chocolates: <input type="text" id="input_choco">
+    <button onclick="calcular()">Compras</button> <br><br>
+    <div id="div_mensagem"></div>
+
+</body>
+</html>
+
+<script>
+
+    function calcular(){
+        var chocolate = Number(input_choco.value);
+        var calculo = chocolate * 3
+
+        if(chocolate > 12){
+            calculo = chocolate * 2.5
+        }
+
+        div_mensagem.innerHTML = `O valor da sua compra foi de R$${calculo}`
+
+    }
+
+</script>

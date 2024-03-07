@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista 04 - Exercício 13</title>
+</head>
+<body>
+    
+    <h3>Média do aluno</h3>
+    Nota da prova: <input type="text" id="ipt_prova">
+    Nota do projeto: <input type="text" id="ipt_projeto"> <br><br>
+    <button onclick="calculomedia()">Verificar situação</button>
+
+</body>
+</html>
+
+<script>
+
+    function calculomedia(){
+        var prova = Number(ipt_prova.value);
+        var projeto = Number(ipt_projeto.value);
+        var media = (prova + projeto) / 2
+
+        if(media >= 6){
+            alert("Parabéns, aprovado!")
+        }
+
+        if(media < 6){
+            alert("Tente outra vez...")
+        }
+    }
+
+</script>

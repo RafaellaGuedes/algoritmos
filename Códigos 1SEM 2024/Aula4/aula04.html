@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 04 - Algoritmos</title>
+</head>
+<body>
+
+    Número: <input type="text" id="input_numero"> <br>
+    <button onclick="analisar()">Analisar Número</button>
+    <div id="div_mensagem"></div>
+
+</body>
+</html>
+
+<script>
+
+    function analisar(){
+        var numero = Number(input_numero.value);
+
+        if(numero > 50){
+            div_mensagem.innerHTML = "<br> O número é maior que 50";           
+        }
+
+        /* se eu puder usar o mesmo usa if, se não, usa else
+        if(numero >= 50){
+            div_mensagem.innerHTML = "<br> O número é maior que 50";     
+        } 
+        if(numero <= 50){
+            div_mensagem.innerHTML = "<br> O número é menor ou igual a 50";
+        }
+        */
+
+        if(numero <= 50){
+            div_mensagem.innerHTML = "<br> O número é menor ou igual a 50";
+        }
+    }
+
+</script>

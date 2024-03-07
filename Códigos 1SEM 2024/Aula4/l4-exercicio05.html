@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula04-Exercício05</title>
+</head>
+<body>
+    
+    <h3>Bem vindo a Algoritmolândia!</h3>
+    KWh por hora: <input type="text" id="input_hora">
+    <button onclick="conta()">Calcular conta de luz</button> 
+
+</body>
+</html>
+
+<script>
+
+    function conta(){
+        var hora = Number(input_hora.value)
+        var valor = Number(0.85)
+        var calculo = hora * valor
+        var conta = (calculo * 0.10)
+        var desconto = calculo - conta
+
+        if (hora >= 100){ 
+            alert(`O valor a ser pago na conta é R$${calculo}`)
+
+        }
+        if(hora < 100){
+            alert(`O valor a ser pago na conta é R$${desconto}`)
+        }
+
+    }
+
+</script>

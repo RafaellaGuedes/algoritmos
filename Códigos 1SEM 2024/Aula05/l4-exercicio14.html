@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista 04 - Exercício 14</title>
+</head>
+<body>
+
+    <h3>Carrara Drivers</h3>
+    Nome do passageiro: <input type="text" id="ipt_nome"><br><br>
+    Distância para o destino: <input type="text" id="ipt_distancia"><br><br>
+    Bandeira: <input type="number" id="ipt_bandeira" min="1" max="3"><br><br>
+    Horário da corrida: <input type="number" id="ipt_horario" max="23" min="0"><br><br>
+    <button onclick="calcular()">Calcular corrida</button>
+    <div id="div_mensagem"></div>
+    
+</body>
+</html>
+
+<script>
+
+    function calcular(){
+        var nome = ipt_nome.value;
+        var distancia = Number(ipt_distancia.value);
+        var bandeira = Number(ipt_bandeira.value);
+        var horario = Number(ipt_horario.value);
+        var valornom = 1.25;
+        var valor = distancia * valornom;
+        var final = 0;
+        var soma_bandeira_valor = bandeira + valor
+        
+        if(horario <=6){
+            final = valor * 0.05 * soma_bandeira_valor
+        }
+
+        if(horario <= 12){
+            final = valor * 0,10 * soma_bandeira_valor
+        }
+
+        if(horario <= 23){
+            final = valor * 0.15 * soma_bandeira_valor
+        }
+   
+    div_mensagem.innerHTML = ` Olá ${nome}, sua corrida será na bandeira ${bandeira}, percorrerá ${distancia}km e o total da corrida será de ${final}`
+
+    }
+</script> 

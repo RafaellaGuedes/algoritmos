@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista 04 - Exercício 18</title>
+</head>
+<body>
+
+    Frequência do aluno: <input type="text" id="input_freq">
+    <button onclick="analisar()">Analisar frequência</button><br><br>
+    <div id="div_imagem"></div>
+<img src="" alt="">
+    
+</body>
+</html>
+
+<script>
+
+    function analisar(){
+        var frequencia = Number(input_freq.value)
+
+        if(frequencia < 50){
+            div_imagem.innerHTML = `<img src="https://img3.stockfresh.com/files/i/izakowski/m/73/3511783_stock-vector-tourist-group-cartoon-illustration.jpg" alt="Turista">`
+        }
+        if(frequencia >= 50){
+            div_imagem.innerHTML = `<img src="https://img3.stockfresh.com/files/i/izakowski/m/73/3511783_stock-vector-tourist-group-cartoon-illustration.jpg" alt="Turista">`
+        }
+
+    }
+
+</script>

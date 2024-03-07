@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista03-Exercício10</title>
+</head>
+<body>
+    
+    <h3>Eleição</h3>
+
+    Votos do Candidato A: <input id="input_a"> <br><br>
+    Votos do Candidato B: <input id="input_b"> <br><br>
+    Votos em Branco: <input id="input_br"><br><br>
+    Votos Nulos: <input id="input_null"><br><br>
+    <button onclick="votos()">Resultado da Eleição</button>
+
+</body>
+</html>
+
+<script>
+
+    var total = 0
+    var candidatoa = 0
+    var candidatob = 0
+    var invalidos = 0
+
+        function votos() {
+        candidatoa = Number(input_a.value);
+        candidatob = Number(input_b.value);
+        invalidos = Number(input_br.value) + Number(input_null.value);
+        total = Number(input_a.value) + Number(input_b.value) + Number(input_br.value) + Number(input_null.value);
+        
+
+        alert(`Total de votos: ${total} 
+Candidato A: ${candidatoa/total*100}% (${candidatoa} votos) 
+Candidato B: ${candidatob/total*100}% (${candidatob} votos) 
+Inválidos: ${invalidos/total*100}% (${invalidos} votos)`)
+    }
+
+</script>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula02-Exercício03</title>
+</head>
+<body>
+    
+    <h3>Economia no Bilhete Único</h3>
+
+    Valor da passagem: <input id="input_valorp"> <br><br>
+    Quantidade de viagens: <input id="input_qntv"><br><br>
+
+    <button onclick="calculobilhete()">Ver Economia</button>
+
+</body>
+</html>
+
+<script>
+
+    function calculobilhete() {
+        
+        var valorp = input_valorp.value
+        var qntv = input_qntv.value
+        
+        var economia = valorp*qntv/2
+        
+        alert ("Você economizará R$"+economia+" por mês")
+    }
+
+</script>

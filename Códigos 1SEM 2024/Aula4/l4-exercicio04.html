@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula04-Exercício04</title>
+</head>
+<body>
+    
+    <h3>Noite da Pizza!!</h3>
+    Valor da Pizza: <input type="text" id="input_valor"> <br><br>
+    Quantidade de amigos: <input type="text" id="input_amigos"> <br><br>
+    <button onclick="divpizza()">Rola a pizza?</button>
+    <div id="div_horadapizza"></div>
+
+</body>
+</html>
+
+<script>
+
+    function divpizza(){
+        var valor = Number(input_valor.value);
+        var amigos = Number(input_amigos.value);
+        var partilha = valor / amigos
+
+        div_horadapizza.innerHTML = `Cada amigo vai pagar R$${partilha} pela pizza.`
+
+        if(partilha > 20){
+            div_horadapizza.innerHTML += `<br> Deu ruim! Pizza muito cara!`
+        }
+
+    }
+
+</script>

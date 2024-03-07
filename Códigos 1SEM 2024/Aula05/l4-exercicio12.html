@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista 04 - Exercício 12</title>
+</head>
+<body>
+    
+    <h3>Elevador subindo!... Ou não</h3>
+    Peso total: <input type="text" id="ipt_peso">
+    <button onclick="calcpeso()">Ligar elevador</button>
+
+</body>
+</html>
+
+<script>
+
+    function calcpeso(){
+        var peso = Number(ipt_peso.value)
+
+        if(peso < 500){
+            alert("Elevador vai se mover!")
+        }
+
+        if(peso >= 500){
+            alert("Alguém precisa descer do elevador.")
+        }
+
+    }
+
+</script>

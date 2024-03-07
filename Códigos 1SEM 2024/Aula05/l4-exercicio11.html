@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista 04 - Exercício 11</title>
+</head>
+<body>
+
+    <h3>Grande Família</h3>
+    Quantidade de filhos: <input id="ipt_filhos">
+    <button onclick="condfamilia()">Analisar família</button>
+    <div id="div_mensagem"></div>
+    
+</body>
+</html>
+
+<script>
+
+    function condfamilia(){
+        var filhos = Number(ipt_filhos.value)
+
+        if(filhos >=1){
+            div_mensagem.innerHTML = `<br>Não tem Tv`
+        }
+
+        if(filhos > 2){
+            div_mensagem.innerHTML += `<br>Não tem internet`
+        }
+        
+        if(filhos >= 3){
+            div_mensagem.innerHTML += `<br>Não tem video game`
+        }
+
+        if(filhos >= 4){
+            div_mensagem.innerHTML += `<br>Não tem Netflix.`
+        }
+
+        
+        if(filhos == 2){
+            div_mensagem.innerHTML = `Não tem Tv.<br>Não tem internet.`   
+        }
+        
+    }
+
+</script>

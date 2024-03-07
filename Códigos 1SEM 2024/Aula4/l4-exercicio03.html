@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula04-Exercício03</title>
+</head>
+<body>
+    
+    <h3>Aluna Fora de Série</h3>
+
+    Nota Entrega: <input type="text" id="input_entrega">
+    Nota Prova: <input type="text" id="input_prova">
+    Nota Projeto: <input type="text" id="input_projeto">
+    <button onclick="analise()">Analisar desempenho</button>
+    <div id="div_alunaexemplar"></div>
+
+</body>
+</html>
+
+<script>
+
+    function analise(){
+        var entrega = Number(input_entrega.value);
+        var prova = Number(input_prova.value);
+        var projeto = Number(input_projeto.value);
+        var media = (entrega + prova + projeto) / 3;
+
+        div_alunaexemplar.innerHTML = `Sua média foi de ${media}.`
+
+        if(media > 9.4){
+            div_alunaexemplar.innerHTML += `<br> Parabéns, você é fora de série!`
+        }
+
+    }
+
+</script>

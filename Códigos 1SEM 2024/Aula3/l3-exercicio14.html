@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista03-Exercício14</title>
+</head>
+<body>
+    
+    <h3>Guerreiro Super Sayajin</h3>
+
+    Ki Base: <input id="input_base"><br><br>
+    Transformar em:
+    <button onclick="guerreirossj()">SSJ</button>
+    <button onclick="guerreirossj2()">SSJ2</button>
+    <button onclick="guerreirossj3()">SSJ3</button><br><br>
+    
+    <div id="div_guerreiro"></div>
+
+</body>
+</html>
+
+<script>
+
+        var base = input_base.value
+
+    function guerreirossj(){
+        base = input_base.value
+        var ssj = base * 50
+      
+    div_guerreiro.innerHTML += `<br> Após se transformar em SSJ, o ki desse Sayajin passa a ser de ${ssj}` 
+    }
+
+    function guerreirossj2(){
+        base = input_base.value
+        var ssj2 = base * 100
+
+    div_guerreiro.innerHTML += `<br> Após se transformar em SSJ2, o ki desse Sayajin passa a ser de ${ssj2}`
+    }
+
+    function guerreirossj3(){
+        base = input_base.value
+        var ssj3 = base * 200
+
+    div_guerreiro.innerHTML += `<br> Após se transformar em SSJ3, o ki desse Sayajin passa a ser de ${ssj3}`
+    }
+
+</script>

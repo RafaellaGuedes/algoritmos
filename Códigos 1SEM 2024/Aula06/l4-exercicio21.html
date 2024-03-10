@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista 04 - Exercício 21</title>
+</head>
+<body>
+
+    <h3>Elevador: peso máximo 500kg</h3>
+    Quantidade de homens: <input type="text" id="input_homens">
+    Quantidade de mulheres: <input type="text" id="input_mulheres">
+    <button onclick="calculo()">Ligar elevador</button> <br><br>
+    <div id="div_mensagem"></div>
+    
+</body>
+</html>
+
+<script>
+
+    function calculo(){
+        var homens = Number(input_homens.value);
+        var mulheres = Number(input_mulheres.value);
+        var peso_homens = homens * 90;
+        var peso_mulheres = mulheres * 70;
+        var total = peso_homens + peso_mulheres;
+        var perder_peso = total - 500;
+
+        if(total <= 500){
+            div_mensagem.innerHTML = `<p style= "color: green">Elevador vai se mover, pois está com ${total}kg.</p>`
+        }
+
+        else{
+            div_mensagem.innerHTML = `<p style= "color: red">Alguém precisa descer. Precisa perder ${perder_peso}kg para mover o elevador.</p>`
+        }
+
+    }
+
+</script>

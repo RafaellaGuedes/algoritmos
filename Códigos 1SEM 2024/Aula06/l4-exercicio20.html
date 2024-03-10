@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista 04 - Exercício 20</title>
+</head>
+<body>
+    
+    <h3>Comida boa ou estragada?</h3>
+    Temperatura do ambiente: <input type="text" id="input_temperatura">
+    <button onclick="verificar()">Verificar clima</button> <br><br>
+    <div id="div_mensagem"></div>
+
+</body>
+</html>
+
+<script>
+
+    function verificar(){
+        var temp_ambiente = Number(input_temperatura.value)
+
+        if(temp_ambiente < 10){
+            div_mensagem.innerHTML = `<img src="https://i.pinimg.com/564x/5e/c9/fb/5ec9fb2bee90bff78aa7e2e20a1bd247.jpg" alt="Comida conservada">`
+        }
+
+        else{
+            div_mensagem.innerHTML = `<img src="https://rnstatic.sfo3.digitaloceanspaces.com/Upload/Noticias/Materia/21-02-2022-17-57-39.jpeg" alt="Comida estragada">`
+        }
+
+    }
+
+</script>

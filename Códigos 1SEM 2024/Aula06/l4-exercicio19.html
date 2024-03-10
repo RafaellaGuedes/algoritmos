@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista 04 - Exercício 19</title>
+</head>
+<body>
+
+    <h3>Aprovado!...será?</h3>
+    Nota da Prova: <input type="text" id="input_prova">
+    Nota da Atividade: <input type="text" id="input_atividade">
+    <button onclick="verificar()">Verificar situação</button> <br><br>
+    <div id="div_mensagem"></div>
+    
+</body>
+</html>
+
+<script>
+
+    function verificar(){
+        var nota_prova = Number(input_prova.value);
+        var nota_atividade = Number(input_atividade.value);
+        var media = (nota_prova + nota_atividade) / 2
+
+        if(media < 6){
+            div_mensagem.innerHTML = `Tente outra vez...`
+        }
+
+        else{
+           div_mensagem.innerHTML = `Parabéns, aprovado!`
+        }
+
+
+    }
+
+</script>

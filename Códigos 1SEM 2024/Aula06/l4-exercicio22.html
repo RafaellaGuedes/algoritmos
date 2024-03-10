@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista 04 - Exercício 22</title>
+</head>
+<body>
+    
+    <h3>Meta de Economia</h3>
+    Qual sua meta de economia? <input type="text" id="input_meta">
+    Quanto você tem guardado? <input type="text" id="input_economia">
+    <button onclick="analisar()">Analisar economia</button> <br><br>
+    <div id="div_mensagem"></div>
+
+</body>
+</html>
+
+<script>
+
+    function analisar(){
+        var meta = Number(input_meta.value);
+        var economia = Number(input_economia.value);
+        var diferenca = economia - meta
+
+        if(economia >= meta){
+            div_mensagem.innerHTML = `Parabéns, meta alcançada!`
+        }
+
+        if(economia > meta){
+            div_mensagem.innerHTML += ` Meta ultrapassada em ${diferenca} reais.`
+        }
+
+        if(economia < meta){
+            div_mensagem.innerHTML = `Força! Ainda em busca da meta! Faltam ${diferenca * -1} reais.`
+        }
+    }
+
+</script>

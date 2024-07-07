@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista 05 - Exercício 06</title>
+</head>
+<body>
+    
+    Para qual time você torce? (São Paulo, Palmeiras, Corinthians ou Santos) <input type="text" id="input_time">
+    <button onclick="analisar()">Fale sobre esse time</button>
+    <div id="div_mensagem" style="color: white;"></div>
+
+</body>
+</html>
+
+<script>
+
+    function analisar(){
+        var time = input_time.value;
+
+        if(time == 'Corinthians'){
+            div_mensagem.innerHTML = `<p style="background-color: black; color:white">Salve o Corinthians</p>`
+        } else if(time == 'Palmeiras'){
+            div_mensagem.innerHTML = `<p style="background-color: green; color: white">Salve o alviverde imponente</p>`
+        } else if(time == 'Santos'){
+            div_mensagem.innerHTML = `<p style="background-color: white; color: black">Agora quem dá a bola é o Santos</p>`
+        } else{
+            div_mensagem.innerHTML = `<p style="background-color: black; color: red">Salve o Tricolor paulista</p>`
+        }
+    }
+
+</script>

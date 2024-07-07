@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista 09 - Exercício 27</title>
+</head>
+<body>
+
+    <h3>Ghost, quanto um elefante incomoda você?</h3>
+    <span>Digite a quantidade de elefantes:</span> <input type="text" id="input_elefantes"><br><br>
+    <button onclick="irritar()">Atazanar a médium</button><br>
+    <div id="div_mensagem"></div>
+    
+</body>
+</html>
+
+<script>
+
+    function irritar(){
+        var elefantes = Number(input_elefantes.value);
+        var letra = "";
+
+        for(var cont = 0; cont <= elefantes; cont++){
+            letra += `1 elefante incomoda muita gente!<br>`;
+            if(cont > 1){
+                letra += `${cont} elefantes, `;
+                for(var i = 0; i <= cont; i++){
+                    letra += `incomodam`;
+                    if(i < cont - 1){
+                        letra += ", ";
+                    }
+                }
+                letra += `, muito mais!<br>`;
+            }
+        }
+    }
+
+</script>

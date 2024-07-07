@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista 09 - Exercício 23</title>
+</head>
+<body>
+    
+    Digite um número de 0 a 100: <input type="text" id="input_num"><br><br>
+    <button onclick="calcular()">Ver Divisores</button>
+    <div id="div_mensagem"></div>
+
+</body>
+</html>
+
+<script>
+
+    function calcular(){
+        div_mensagem.innerHTML = "";
+        var numero = Number(input_num.value);
+        var texto = "";
+
+        texto += `Divisores do número ${numero}:<br>`
+
+        for(var cont = 1; cont <= 100; cont++){
+            if(numero % cont == 0){
+                texto += `${cont}<br>`;
+            }
+        }
+
+        div_mensagem.innerHTML = texto;
+    }
+
+</script>

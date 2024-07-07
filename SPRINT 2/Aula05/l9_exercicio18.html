@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista 09 - Exercício 18</title>
+</head>
+<body>
+
+    Quantas xícaras de café com leite você já tomou na vida? <input type="text" id="input_xicara"><br><br>
+    <button onclick="exibir()">Ver a quantidade</button>
+    <div id="div_mensagem"></div>
+    
+</body>
+</html>
+
+<script>
+
+    function exibir(){
+        var qtdXicaras = Number(input_xicara.value);
+        var colherLeite = `<img src="https://minhasaude.proteste.org.br/wp-content/uploads/2023/06/colher-carregando-punhado-de-leite-em-po-sobre-fundo-branco.jpg" alt="leite em pó" style="height: 200px; width: 200px;">`;
+        var colherCafe = `<img src="https://cdn.pixabay.com/photo/2014/04/05/11/39/spoon-316577_960_720.jpg" alt="café" style="height: 200px; width: 200px;">`
+        var texto = "";
+
+        div_mensagem.innerHTML = "";
+
+        for(var cont = 1; cont <= qtdXicaras; cont++){
+            div_mensagem.innerHTML += `${colherLeite} ${colherCafe} ${colherCafe}` 
+        }
+    }
+
+</script>

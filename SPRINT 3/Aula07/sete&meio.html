@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sette e Mezzo</title>
+</head>
+
+<body>
+
+    <button id="btn_jogar" style="display: flex;" onclick="jogar()">Jogar Sete e Meio</button>
+    <div id="jogando" style="display: none;">
+        <button onclick="tirar()">Tirar Carta</button>
+        <button onclick="passar()">Passar Vez</button>
+        <button onclick="reiniciar()">Reiniciar Jogo</button>
+        <br><br>
+        <div id="div_painel_jogador">
+            <h2>JOGADOR:</h2><br><br>
+        </div>
+        <div id="div_painel_banca">
+            <h2>BANCA:</h2><br><br>
+        </div>
+        <div id="div_painel">
+            <h2>PAINEL:</h2><br><br>
+        </div>
+    </div>
+
+</body>
+
+</html>
+
+<script>
+
+    function jogar() {
+        jogando.style.display = 'unset';
+        btn_jogar.style.display = 'none';
+    }
+
+    var baralho = [
+        "Ás de paus",
+        "2 de paus",
+        "3 de paus",
+        "4 de paus",
+        "5 de paus",
+        "6 de paus",
+        "7 de paus",
+        "Valete de paus",
+        "Rainha de paus",
+        "Rei de paus",
+        "Ás de copas",
+        "2 de copas",
+        "3 de copas",
+        "4 de copas",
+        "5 de copas",
+        "6 de copas",
+        "7 de copas",
+        "Valete de copas",
+        "Rainha de copas",
+        "Rei de copas",
+        "Ás de ouros",
+        "2 de ouros",
+        "3 de ouros",
+        "4 de ouros",
+        "5 de ouros",
+        "6 de ouros",
+        "7 de ouros",
+        "Valete de ouros",
+        "Rainha de ouros",
+        "Rei de ouros",
+        "Ás de espadas",
+        "2 de espadas",
+        "3 de espadas",
+        "4 de espadas",
+        "5 de espadas",
+        "6 de espadas",
+        "7 de espadas",
+        "Valete de espadas",
+        "Rainha de espadas",
+        "Rei de espadas"];
+
+    var pontos_jogador = 0;
+    var pontos_banca = 0;
+
+    function tirar() {
+        var cartas = Math.random() * (baralho.length - 1);
+        var posicao_carta = cartas.toFixed(0);
+        var carta = baralho[posicao_carta];
+        var numero_carta = Number(carta[0]);
+        var valor = 0;
+
+        if (pontos_jogador < 7.5) {
+            if (carta.startsWith('Ás')) {
+                valor = 1;
+                baralho.splice(posicao_carta, 1);
+            } else if (carta.startsWith('Valete') || carta.startsWith('Rainha') || carta.startsWith('Rei')) {
+                valor = 0.5;
+                baralho.splice(posicao_carta, 1);
+            } else {
+                valor = numero_carta;
+                baralho.splice(posicao_carta, 1);
+            }
+            pontos_jogador += valor;
+            div_painel_jogador.innerHTML += `(${pontos_jogador}) - ${carta}<br><br>`;
+            if (pontos_jogador > 7.5) {
+                div_painel.innerHTML += `JOGADOR ESTOUROU<br><br>`;
+                div_painel.innerHTML += `A banca ganhou com ${pontos_banca} pontos<br><br>`;
+            } else if (pontos_jogador == 7.5) {
+                div_painel.innerHTML += 'JOGADOR GANHOU!<br><br>';
+                div_painel.innerHTML += `O jogador ganhou com ${pontos_jogador} pontos<br><br>`;
+            }
+        }
+    }
+
+    function passar() {
+
+        for (; pontos_banca < 7.5 || pontos_banca <= pontos_jogador;) {
+            var cartas = Math.random() * (baralho.length - 1);
+            var posicao_carta = cartas.toFixed(0);
+            var carta = baralho[posicao_carta];
+            var numero_carta = Number(carta[0]);
+            var valor = 0;
+            if (carta.startsWith('Ás')) {
+                valor = 1;
+                baralho.splice(posicao_carta, 1);
+            } else if (carta.startsWith('Valete') || carta.startsWith('Rainha') || carta.startsWith('Rei')) {
+                valor = 0.5;
+                baralho.splice(posicao_carta, 1);
+            } else {
+                valor = numero_carta;
+                baralho.splice(posicao_carta, 1);
+            }
+            pontos_banca += valor;
+            div_painel_banca.innerHTML += `(${pontos_banca}) - ${carta}<br><br>`;
+            if (pontos_banca > 7.5) {
+                div_painel.innerHTML += `BANCA ESTOUROU<br><br>`;
+                div_painel.innerHTML += `O jogador ganhou com ${pontos_jogador} pontos!<br><br>`;
+            } else if (pontos_banca == 7.5) {
+                div_painel.innerHTML += 'BANCA GANHOU!<br><br>';
+                div_painel.innerHTML += `A banca ganhou com ${pontos_banca} pontos<br><br>`;
+            }
+        }
+    }
+
+    function reiniciar() {
+        pontos_banca = 0;
+        pontos_jogador = 0;
+
+        baralho = [
+            "Ás de paus",
+            "2 de paus",
+            "3 de paus",
+            "4 de paus",
+            "5 de paus",
+            "6 de paus",
+            "7 de paus",
+            "Valete de paus",
+            "Rainha de paus",
+            "Rei de paus",
+            "Ás de copas",
+            "2 de copas",
+            "3 de copas",
+            "4 de copas",
+            "5 de copas",
+            "6 de copas",
+            "7 de copas",
+            "Valete de copas",
+            "Rainha de copas",
+            "Rei de copas",
+            "Ás de ouros",
+            "2 de ouros",
+            "3 de ouros",
+            "4 de ouros",
+            "5 de ouros",
+            "6 de ouros",
+            "7 de ouros",
+            "Valete de ouros",
+            "Rainha de ouros",
+            "Rei de ouros",
+            "Ás de espadas",
+            "2 de espadas",
+            "3 de espadas",
+            "4 de espadas",
+            "5 de espadas",
+            "6 de espadas",
+            "7 de espadas",
+            "Valete de espadas",
+            "Rainha de espadas",
+            "Rei de espadas"];
+
+        div_painel.innerHTML = '<h2>PAINEL:</h2><br><br>';
+        div_painel_jogador.innerHTML = '<h2>JOGADOR</h2><br><br>';
+        div_painel_banca.innerHTML = '<h2>BANCA:</h2><br><br>';
+
+        jogando.style.display = 'none';
+        btn_jogar.style.display = 'unset';
+    }
+
+</script>

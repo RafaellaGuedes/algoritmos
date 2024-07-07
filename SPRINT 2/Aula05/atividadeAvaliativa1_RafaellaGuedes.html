@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade Avaliativa 1 - Sprint 2</title>
+</head>
+
+<body>
+
+    <div id="div_inicio">
+    <h1>Seja bem vindo ao Banco KNAB</h1> <br><br>
+    <h3>Simulação de Emprestimos e Investimentos</h3> <br><br>
+    <b>Entre com os dados de sua conta:</b> <br><br>
+    <input id="input_conta" placeholder="Conta">
+    <input id="input_digito" placeholder="Digito">
+    <input id="input_senha" type="password" placeholder="Senha"> <br><br>
+    <button onclick="simular()">Simular</button>
+    </div>
+
+    <div id="div_simulacao" style="display: none;">
+        <h1>O Banco KNAB é a sua melhor opção</h1>
+        <h3>Emprestimos e Investimentos com as melhores taxas do mercado</h3>
+        <b>Entre com os dados da sua simulação</b> <br><br>
+        Valor da Operação: <input type="text" id="input_valor"><br><br>
+        <select name="operacao" id="select_operacao">
+            <option value="0" selected>Selecione a Operação</option>
+            <option value="1">Empréstimo</option>
+            <option value="2">Investimento</option>
+        </select>
+        <select name="prazo" id="select_prazo">
+            <option value="0" selected>Selecione o Prazo</option>
+            <option value="1">Curto</option>
+            <option value="2">Médio</option>
+            <option value="3">Longo</option>
+        </select> <br><br>
+        <button onclick="analisar()">Mostrar Resultado</button>
+        <button onclick="limpar()">Voltar a Simulação</button>
+    </div> <br><br>
+    <div id="div_mensagem"></div>
+
+</body>
+
+</html>
+
+<script>
+
+    function simular() {
+        var conta = Number(input_conta.value);
+        var digito = Number(input_digito.value);
+        var senha = input_senha.value;
+        var resto = conta % 10;
+        var valido = false;        
+
+        if (conta != 0 && digito == resto) {
+            if ((digito >= 0 && digito <= 3)
+                && senha == 'manaus') {
+                valido = true;
+            } else if ((digito >= 4 && digito <= 7)
+                && senha == 'recife') {
+                valido = true;
+            } else if (digito > 7  && senha == 'fortaleza') {
+                valido = true
+            }
+        } 
+
+        if(!valido) {
+            alert("Dados inválidos! Tente novamente com dados válidos.")
+        }
+
+        if(valido){
+            div_inicio.style.display = "none";
+            div_simulacao.style.display = "block";
+        }      
+    }
+    var indice = 0;
+     
+    function analisar(){
+        var valor = Number(input_valor.value);
+        var operacao = select_operacao.value;
+        var prazo = select_prazo.value;
+        var juros = 0;
+        var rendimento = 0;
+
+        if(prazo == 1 || prazo == 2){
+            alert("Esta operação está condicionada ao seu perfil")
+        }
+        
+        if(operacao == 1){
+            if(prazo == 1){
+                juros = valor * 0.24;
+            } else if(prazo == 2){
+                juros = valor * 0.16;
+            } else{
+                juros = valor * 0.1;
+            }
+                div_mensagem.innerHTML += ` “Simulação ${indice + 1} – Para o empréstimo de R$${valor} no ${prazo} prazo será cobrado os juros de R$${juros} ao ano<br><br>`;
+            indice++;
+        }
+
+        if(operacao == 2){
+            if(prazo == 1){
+                rendimento = valor * 0.05;
+            } else if(prazo == 2){
+                rendimento = valor * 0.08;
+            } else{
+                rendimento = valor * 0.12;
+            }
+            div_mensagem.innerHTML = `Simulação ${indice} – Investindo R$${valor} no ${prazo} prazo o seu rendimento será de R$${rendimento} ao ano`;
+            indice++;
+        }
+    }
+
+    function limpar(){
+        div_mensagem.innerHTML = ""
+    }
+
+</script>

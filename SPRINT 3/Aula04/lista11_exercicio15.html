@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista 11 - Exercício 15</title>
+</head>
+
+<body>
+
+    Nome do produto: <input type="text" id="input_nome"><br><br>
+    Preço de compra: <input type="text" id="input_compra"><br><br>
+    <button onclick="cadastrar()">Cadastrar</button>
+    <button onclick="exibir()">Relatório de estoque</button>
+    <div id="div_mensagem"></div>
+
+</body>
+
+</html>
+
+<script>
+
+    var lista_produtos = [];
+    var lista_precos = [];
+
+    function cadastrar() {
+        var produto = input_nome.value;
+        var preco = Number(input_compra.value);
+
+        lista_produtos.push(produto);
+        lista_precos.push(preco);
+    }
+
+    function exibir() {
+        div_mensagem.innerHTML = "";
+        
+        var tamanho_produtos = lista_produtos.length;
+        var tamanho_precos = lista_precos.length;
+        var preco_venda = 0;
+        var cont = 1;
+
+        for (var i = 0; i < tamanho_produtos; i++) {
+            preco_venda = lista_precos[i] * 1.25;
+
+                div_mensagem.innerHTML += `Total de produtos: ${tamanho_produtos} <br>
+                Produto ${cont}: ${lista_produtos[i]} <br>
+                Preço de compra: ${lista_precos[i]}. Vender por R$${preco_venda} <br>`;
+
+            cont++
+        }
+
+    }
+
+</script>

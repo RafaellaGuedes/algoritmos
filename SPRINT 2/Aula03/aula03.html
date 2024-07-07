@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 03 - Sprint 02</title>
+</head>
+<body>
+    
+Pokemon:
+<select id="select_poke">
+    <option selected value="#"> Selecione uma opção</option>
+    <option value="1">Bulbasaur</option>
+    <option value="2">Charmander</option>
+    <option value="3">Squirtle</option>
+    <!-- <label></label> engloba o conteúdo -->
+
+</select>
+
+<button onclick="selecionar()">Selecionar</button>
+
+</body>
+</html>
+
+<script>
+
+    function selecionar(){
+        var pokemon = select_poke.value;
+
+        if(pokemon == "#"){
+            alert("Selecione uma opção válida!");
+        }
+    }
+
+</script>

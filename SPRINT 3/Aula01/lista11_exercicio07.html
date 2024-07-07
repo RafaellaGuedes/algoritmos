@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista 11 - Exercício 07</title>
+</head>
+
+<body>
+
+    Digite seus filmes favoritos: <input type="text" id="input_filme"><br>
+    <button onclick="cadastrar()">Cadastrar</button><br>
+    <div id="div_mensagem"></div>
+
+</body>
+
+</html>
+
+<script>
+
+    var lista_filmes = [];
+    var texto = "";
+    
+    function cadastrar() {
+        div_mensagem.innerHTML += "";
+
+        var filme = input_filme.value;
+
+        lista_filmes.push(filme);
+
+        exibir();
+    }
+
+    function exibir() {
+
+        for (var i = 0; i < lista_filmes.length; i++) {
+            var cor = "";
+
+            if (i % 2 != 0) {
+                cor = "red";
+            } else {
+                cor = "blue";
+            }
+            texto += `<p style="color: ${cor};">${lista_filmes[i]}</p><br>`;
+        }
+
+        div_mensagem.innerHTML = texto;
+
+    }
+
+
+</script>

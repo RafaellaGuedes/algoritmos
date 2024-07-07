@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista 09 - Exercício 12</title>
+</head>
+<body>
+    
+    Tabuada: <input type="text" id="input_tab"> <br><br>
+    Até que número a tabuada deve ser construída? <input type="text" id="input_final"> <br><br>
+    <button onclick="exibirTabuada()">Ver Tabuada</button>
+    <div id="div_mensagem"></div>
+
+</body>
+</html>
+
+<script>
+
+    function exibirTabuada(){
+        var num = Number(input_tab.value);
+        var numFinal = Number(input_final.value);
+        
+        for(var i = 0; i <= numFinal; i++){
+            var calculo = Number(num*i);
+            if(i % 2 == 0){
+                div_mensagem.innerHTML += `<p style="color: blue">${num}x${i}=${calculo}</p>`
+            } else {
+                div_mensagem.innerHTML += `<p style="color: red">${num}x${i}=${calculo}</p>`
+
+
+            }
+        }
+    }
+
+</script>

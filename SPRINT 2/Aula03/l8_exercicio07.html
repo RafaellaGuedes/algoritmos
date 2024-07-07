@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista 08 - Exercício 07</title>
+</head>
+<body>
+    
+    Insira seu login: <input type="text" id="input_login"> <br><br>
+    Insira sua senha: <input type="password" id="input_senha"> <br><br>
+    Insira sua informação pessoal: <input type="text" id="input_info"><br><br>
+    <button onclick="autenticar()">Autenticar</button>
+    <div id="div_mensagem"></div>
+
+</body>
+</html>
+
+<script>
+
+    function autenticar(){
+        var login = input_login.value;
+        var senha = input_senha.value;
+        var infoPessoal = input_info.value;
+        var x = 3;
+
+        if(x > 1 && (infoPessoal == '1949' || infoPessoal == 'louro josé') && login == 'ana' && senha == 'braga'){
+            x =3;
+            div_mensagem.innerHTML = `Usuário autenticado`
+        } else if(x > 1){
+            div_mensagem.innerHTML = `Falha na autenticação.<br>Você ainda tem ${x} tentativa(s).`
+            x --;
+        } else {
+            div_mensagem.innerHTML += `Usuário bloqueado`
+        }
+    }
+
+</script>

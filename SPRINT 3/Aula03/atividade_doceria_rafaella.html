@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade Doceria</title>
+</head>
+
+<body>
+
+    <h1>Dori's Doces</h1>
+
+    <h4>Insira a quantidade que deseja de cada doce e seu respectivo valor</h4>
+
+    Quantidade de Macarons: <input type="text" id="input_qtd_macarons">
+    <br>
+    Preço do Macaron (unidade): <input type="text" id="input_prc_macaron">
+
+    <br><br>
+
+    Quantidade de Brigadeiros Gourmets: <input type="text" id="input_qtd_brigadeiros">
+    <br>
+    Preço do Brigadeiro Gourmet (unidade): <input type="text" id="input_prc_brigadeiro">
+
+    <br><br>
+
+    Quantidade de Cupcakes: <input type="text" id="input_qtd_cupcakes">
+    <br>
+    Preço do Cupcake (unidade): <input type="text" id="input_prc_cupcake">
+
+    <br><br>
+
+    Quantidade de Cheesecakes: <input type="text" id="input_qtd_cheesecakes">
+    <br>
+    Preço do Cheesecake (unidade): <input type="text" id="input_prc_cheesecake">
+
+    <br><br>
+
+    <button onclick="verificar()">Verificar Vendas</button>
+    <br><br>
+    <div id="div_mensagem"></div>
+
+</body>
+
+</html>
+
+<script>
+
+    function verificar() {
+
+        var qtd_macaron = Number(input_qtd_macarons.value);
+        var prc_macaron = Number(input_prc_macaron.value);
+        var img_macron = `<img src="./assets/macaron.jpg" alt="Macaron" style="width: 50px; height: 50px;">`;
+
+        var qtd_brigadeiro = Number(input_qtd_brigadeiros.value);
+        var prc_brigadeiro = Number(input_prc_brigadeiro.value);
+        var img_brigadeiro = `<img src="./assets/brigadeiro.jpg" alt="Brigadeiro" style="width: 50px; height: 50px;">`;
+
+        var qtd_cupcake = Number(input_qtd_cupcakes.value);
+        var prc_cupcake = Number(input_prc_cupcake.value);
+        var img_cupcake = `<img src="./assets/cupcake.jpg" alt="Cupcake" style="width: 50px; height: 50px;">`;
+
+        var qtd_cheesecake = Number(input_qtd_cheesecakes.value);
+        var prc_cheesecake = Number(input_prc_cheesecake.value);
+        var img_cheesecake = `<img src="./assets/cheesecake.jpg" alt="Cheesecake" style="width: 50px; height: 50px;">`;
+
+        var prc_doces = (prc_brigadeiro * qtd_brigadeiro) + (prc_cheesecake * qtd_cheesecake) + (prc_cupcake * qtd_cupcake) + (prc_macaron * qtd_macaron);
+        var indice = 0;
+
+        var texto = "";
+
+        if (qtd_brigadeiro < 0 || prc_brigadeiro < 0 || qtd_macaron < 0 || prc_macaron < 0 || qtd_cupcake < 0 || prc_cupcake < 0 || qtd_cheesecake < 0 || prc_cheesecake < 0) {
+            alert("Valores inválidos, não há como vender quantidades negativas.")
+        } else {
+
+            for (var i = 1; i <= qtd_macaron; i++) {
+                // if (qtd_macaron > 0) {
+                    indice++;
+                    texto += `${indice}   -   ${img_macron}   -   R$ ${prc_macaron}<br>`;
+                // }
+            }
+
+            for (var index = 1; index <= qtd_brigadeiro; index++) {
+                // if (qtd_brigadeiro > 0) {
+                    indice++;
+                    texto += `${indice}   -   ${img_brigadeiro}   -   R$ ${prc_brigadeiro}<br>`;
+                // }
+            }
+
+            for (var cont = 1; cont <= qtd_cupcake; cont++) {
+                // if (qtd_cupcake > 0) {
+                    indice++;
+                    texto += `${indice}   -   ${img_cupcake}   -   R$ ${prc_cupcake}<br>`;
+                // }
+            }
+
+            for (var contador = 1; contador <= qtd_cheesecake; contador++) {
+                // if (qtd_cheesecake > 0) {
+                    indice++;
+                    texto += `${indice}   -   ${img_cheesecake}   -   R$ ${prc_cheesecake}<br>`;
+                // }
+            }
+
+        }
+
+        texto += `Com a quantidade de ${qtd_macaron} Macarons, ${qtd_brigadeiro} Brigadeiros, ${qtd_cupcake} Cupcakes e ${qtd_cheesecake} Cheesecakes, a venda totalizará R$${prc_doces}`;
+
+        div_mensagem.innerHTML = `${texto}<br>`;
+
+    }
+
+</script>

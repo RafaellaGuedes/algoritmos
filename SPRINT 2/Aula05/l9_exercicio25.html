@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista 09 - Exercício 25</title>
+</head>
+
+<body>
+
+    Digite um número (entre 10 e 500): <input type="text" id="input_num" min="10" max="500"><br><br>
+    <button onclick="somar()">Somar pares</button>
+    <div id="div_mensagem"></div>
+
+</body>
+
+</html>
+
+<script>
+
+    function somar() {
+        div_mensagem.innerHTML = "";
+        var numero = Number(input_num.value);
+        var texto = "";
+
+        if (numero < 10 || numero > 500) {
+            alert("O número deve estar entre 10 e 500!")
+        } else {
+            for (var cont = 1; cont <= numero; cont++) {
+                if (cont % 2 == 0) {
+                    texto += `${cont}<br>`
+                }
+            }
+            div_mensagem.innerHTML = `${texto}<br>
+        Soma dos pares: ${cont + numero}<br>`;
+        }
+    }
+
+</script>

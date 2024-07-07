@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista 09 - Exercício 10</title>
+</head>
+
+<body>
+
+    Número inicial: <input type="number" id="input_inicio"> <br><br>
+    Número final: <input type="number" id="input_final">
+    <button onclick="exibir()">S2 Pares</button>
+    <div id="div_mensagem"></div>
+
+</body>
+
+</html>
+
+<script>
+
+    function exibir() {
+        var inicio = Number(input_inicio.value);
+        var final = Number(input_final.value);
+
+        div_mensagem.innerHTML = "";
+
+        for (inicio; inicio <= final; inicio++) {
+            if (inicio % 2 == 0) {
+                div_mensagem.innerHTML += `${inicio}<br>`;
+            }
+        }
+
+    }
+
+</script>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h1>Cadastro de Endereços</h1>
+
+    <label>
+        Nome: <input type="text" id="input_nome">
+    </label>
+
+    <br><br>
+
+    <label>
+        CEP: <input maxlength="8" id="input_cep" oninput="buscar()">
+    </label>
+
+    <br><br>
+
+    <label>
+        Logradouro: <input type="text" id="input_logradouro">
+    </label>
+
+    <br><br>
+
+    <label>
+        Complemento: <input type="text" id="input_complemento">
+    </label>
+
+    <br><br>
+
+    <label>
+        Bairro: <input type="text" id="input_bairro">
+    </label>
+
+    <br><br>
+
+    <label>
+        Cidade: <input type="text" id="input_cidade">
+    </label>
+
+    <br><br>
+
+    <label>
+        Estado: <input type="text" id="input_estado">
+    </label>
+
+    <!-- <button onclick="buscar()">Buscar</button> -->
+
+</body>
+
+</html>
+
+<script>
+
+    function buscar() {
+        let nome = "input_nome";
+        let cep = input_cep.value;
+        let logradouro = "input_logradouro";
+        let complemento = "input_complemento";
+        let bairro = "input_bairro";
+        let cidade = "input_cidade";
+        let estado = "input_estado";
+
+        fetch(`https://viacep.com.br/ws/${cep}/json/`)
+            .then(function (respostaServidor) {
+                console.log(respostaServidor);
+
+                respostaServidor.json()
+                    .then(function (respostaFormatada) {
+                        console.log(respostaFormatada);
+
+                        // input_cep = respostaFormatada.logradouro;
+                        input_logradouro.value = respostaFormatada.logradouro;
+                        input_complemento.value = respostaFormatada.complemento;
+                        input_bairro.value = respostaFormatada.bairro;
+                        input_cidade.value = respostaFormatada.localidade;
+                        input_estado.value = respostaFormatada.estado;
+                    })
+            })
+            .catch(function () {
+            })
+    }
+
+</script>

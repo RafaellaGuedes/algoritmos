@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista 09 - Exercício 15</title>
+</head>
+<body>
+
+    Quantas pessoas vão entrar no carro? <input type="text" id="input_qtd"><br><br>
+    <button onclick="exibir()">#Partiu Carona</button>
+    <div id="div_mensagem"></div>
+    
+</body>
+</html>
+
+<script>
+
+    function exibir(){
+        var qtdPessoas = Number(input_qtd.value);
+        var texto = "";
+        div_mensagem.innerHTML = "";
+        
+        for(var cont = 1; cont <= qtdPessoas; cont ++){
+            if(cont == 1){
+                div_mensagem.innerHTML += `Entrou o 1º passageiro (que é o(a) motorista)<br>`
+            } else if(cont <= 5){
+                div_mensagem.innerHTML += `Entrou o ${cont} passageiro<br>`
+            } else {
+                div_mensagem.innerHTML += `O ${cont} passageiro terá que esperar!<br>`
+            }
+        }
+    }
+
+</script>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista 04 - Exercício 23</title>
+</head>
+
+<!-- Enunciado do exercício feito pela Ruth Fernandes:
+    
+    A velocidade de um vagão de metrô é de 70km/h e ele faz paradas de 1 minuto em cada estação. Sabendo que o vagão demora 4 minutos para chegar a cada estação e que existem 30 estações:
+
+    A) Solicite em qual estação o passageiro irá embarcar
+
+    B) Solicite em qual estação o passageiro irá desembarcar
+
+    C) Crie um botão (Tempo de Percurso) para calcular o tempo que o passageiro irá demorar no trajeto
+
+    D) Caso o passageiro demore 30 minutos ou mais, exiba a mensagem "Você irá demorar AA minutos, tente cochilar em algum assento!"
+
+    E) Caso o passageiro demore menos de 30 minutos, exiba a mensagem "Você irá demorar AA minutos, em breve chegará ao seu destino!" -->
+
+<body>
+
+    <h3>Dá tempo de cochilar?</h3>
+    Estação de embarque: <input type="text" id="input_embarque">
+    Estação de desembarque: <input type="text" id="input_desembarque">
+    <button onclick="calculotrajeto()">Tempo de Percurso</button> <br><br>
+    <div id="div_mensagem"></div>
+
+</body>
+</html>
+
+<script>
+    function calculotrajeto(){
+
+        var embarque = Number(input_embarque.value);
+        var desembarque = Number(input_desembarque.value);
+        var estacoes = desembarque - embarque;
+        var tempoViagem = estacoes * 4;
+        var tempoTotal = (tempoViagem + estacoes);
+        
+        if(tempoTotal >= 0.30){
+            div_mensagem.innerHTML = `Você irá demorar ${tempoTotal} minutos, tente cochilar em algum assento!` 
+        }
+        
+        if(tempoTotal < 0.30){
+            div_mensagem.innerHTML = `Você irá demorar ${tempoTotal} minutos, em breve chegará ao seu destino!`
+        }
+    }
+</script>
+

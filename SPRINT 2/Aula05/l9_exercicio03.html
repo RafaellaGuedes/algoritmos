@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista 09 - Exercício 03</title>
+</head>
+<body>
+
+    <button onclick="dizer()">Diga algo sobre a matéria de algorítmos</button>
+    <div id="div_mensagem"></div>
+
+</body>
+</html>
+
+<script>
+
+    function dizer(){
+        div_mensagem.innerHTML = "";
+        var contador = 1;
+        var mensagem = "A matéria mais divertida!";
+        
+        for( ; contador <= 7; contador++){
+            div_mensagem.innerHTML += `${contador}. ${mensagem}<br>`
+        }
+    }
+
+</script>

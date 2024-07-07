@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista 09 - Exercício 22</title>
+</head>
+
+<body>
+
+    Limite inferior: <input type="text" id="input_inferior" min="1"><br><br>
+    Limite superior: <input type="text" id="input_superior"><br><br>
+    Numero teste de divisibilidade: <input type="text" id="input_teste"><br><br>
+    <button onclick="contar()">Contar</button><br><br>
+    <div id="div_mensagem"></div>
+
+</body>
+
+</html>
+
+<script>
+
+    function contar() {
+        div_mensagem.innerHTML = texto;
+        
+        var limInferior = Number(input_inferior.value);
+        var limSuperior = Number(input_superior.value);
+        var testeDiv = Number(input_teste.value);
+        var cont = 0;
+        var soma = 0;
+        var maiorNumero = limSuperior;
+        var menorNumero = Number(input_inferior.value);
+        var texto = "";
+
+        if (limInferior < 1) {
+            alert("Limite inferior inválido! O número deve ser maior que 1.")
+        } else if (limSuperior > 100 && limSuperior < limInferior) {
+            alert("Limite superior inválido! O número deve ser menor 100 e maior que o Limite Inferior.")
+        } else if (testeDiv < 3 || testeDiv > 10) {
+            alert("Número de teste inválido! O número deve ser maior que 3 e menor que 10.")
+        } else {
+
+            for (;limInferior <= limSuperior; limInferior++) {
+                if (limInferior % testeDiv == 0) {
+                    cont++;
+                    soma += limInferior;
+                    texto += `${limInferior}, `;
+                }
+
+            }
+        }
+        var media = soma / cont;
+
+            texto += `<br>QUANTIDADE TOTAL DE NÚMEROS EXIBIDOS: ${cont}<br>
+            SOMATÓRIO DOS NÚMEROS EXIBIDOS: ${soma}<br>
+            MÉDIA DOS NÚMEROS EXIBIDOS: ${media}<br>
+            MAIOR NÚMERO EXIBIDO: ${maiorNumero}<br>
+            MENOR NÚMERO EXIBIDO: ${menorNumero}<br>`;
+         
+            div_mensagem.innerHTML = texto;
+    }
+
+</script>

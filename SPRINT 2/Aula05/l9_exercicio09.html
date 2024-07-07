@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista 09 - Exercício 09</title>
+</head>
+<body>
+
+    Digite um número: <input type="text" id="input_num"> <br><br>
+    Digite uma frase: <input type="text" id="input_frase"> <br><br>
+    <button onclick="repetir()">Papagaio</button>
+    
+</body>
+</html>
+
+<script>
+
+    function repetir(){
+        var limite = Number(input_num.value);
+        var frase = input_frase.value;
+        var texto = "";
+
+        for(var i = 1; i <= limite; i++){
+            texto += `${frase} \n`;
+        }
+
+        for(i = 1; i <= limite; i++){
+            alert(`${i} - ${texto}`);
+        }
+    }
+
+</script>

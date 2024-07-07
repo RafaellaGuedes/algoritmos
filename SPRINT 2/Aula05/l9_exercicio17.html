@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista 09 - Execício 17</title>
+</head>
+<body>
+    
+    Quantas Coca-Colas você acha que já bebeu na vida? <input type="text" id="input_coca"><br><br>
+    <button onclick="calcular()">Ver a quantidade</button>
+    <div id="div_mensagem"></div>
+
+</body>
+</html>
+
+<script>
+
+    function calcular(){
+        var qdtCoca = Number(input_coca.value);
+        var texto = "";
+
+        div_mensagem.innerHTML = "";
+
+        for(var cont = 1; cont <= qdtCoca; cont++){
+           div_mensagem.innerHTML += `<img src="https://andinacocacola.vtexassets.com/arquivos/ids/157651/110130_COCA---CCO350ml.jpg?v=638404083111870000" alt="latinha de coca" style="height: 200px; width: 200px;">` 
+        }
+    }
+
+</script>

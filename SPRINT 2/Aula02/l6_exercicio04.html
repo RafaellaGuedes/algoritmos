@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista 06 - Exercício 04</title>
+</head>
+<body>
+    
+    Hora que costuma acessar Netflix: <input type="text" id="input_hora">
+    <button onclick="recomendar()">Ver recomendação</button>
+    <div id="div_mensagem"></div>
+
+</body>
+</html>
+
+<script>
+
+    function recomendar(){
+        var hora = Number(input_hora.value);
+
+        if(hora >= 19 && hora <= 21){
+            div_mensagem.innerHTML = `Não é recomendável que você assista sua série favorita no horário ${hora}!`
+        } else{
+            div_mensagem.innerHTML = `O horário ${hora} é adequado para assistir sua série favorita!`
+        }
+
+    }
+
+</script>

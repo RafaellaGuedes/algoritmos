@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista 07 - Exercício 08</title>
+</head>
+<body>
+    
+    Informe: <br><br>
+    Nome da empresa: <input type="text" id="input_empresa"> <br><br>
+    Valor da Bolsa: <input type="text" id="input_bolsa"> <br><br>
+    Valor VR: <input type="text" id="input_vr"> <br><br>
+    Tempo de deslocamento: <input type="text" id="input_tempo"> <br><br>
+    <button onclick="analisar()">É preferida</button>
+    <div id="div_mensagem"></div>
+
+</body>
+</html>
+
+<script>
+
+    function analisar(){
+        var empresa = input_empresa.value;
+        var bolsa = Number(input_bolsa.value);
+        var vr = Number(input_vr.value);
+        var tempo = Number(input_tempo.value);
+
+        if(bolsa >= 1800 || vr >= 20 || tempo <= 30){
+            div_mensagem.innerHTML = `A empresa ${empresa} é uma de suas preferências`;
+        } else {
+            div_mensagem.innerHTML = `A empresa ${empresa} está fora da sua lista`; 
+        }
+
+    }
+
+</script>

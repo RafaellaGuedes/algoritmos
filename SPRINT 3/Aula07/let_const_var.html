@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+
+    var variavel = 123;
+    console.log(variavel);  // para estudar a diferença do comportamento da variável, pois se a variável for declarada depois do console ela apresentará valor undefined pois ela existe, mas só será declarada depois
+
+    const constante = 123;
+    console.log(constante); // aqui ele mantém o tipo da variável, então se mudar número pra letra ele apresenta erro (trava e impede o desenvolvedor) só pode alterar a const com vetor ou JSON
+
+    let variavelLet = 123;
+    console.log(variavelLet); // mostra como pode mudar de número para letras sem dar erro
+
+    // nenhuma delas pode ser acessada antes de declarar, porém a var aparece como undefined e as outras aparecem erros
+
+</script>

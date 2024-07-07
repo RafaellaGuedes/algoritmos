@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista 09 - Exercício 08</title>
+</head>
+
+<body>
+
+    Digite um número: <input type="text" id="input_num">
+    <button onclick="analisar()">Viva o 7!</button>
+    <div id="div_mensagem"></div>
+
+</body>
+
+</html>
+
+<script>
+
+    function analisar() {
+        var numero = Number(input_num.value);
+
+        if (numero >= 0 && numero <= 200) {
+            for (var i = 0; i <= numero; i++) {
+                if (i % 7 == 0) {
+                    div_mensagem.innerHTML += `${i}<br>`;
+
+                }
+            }
+        }
+    }
+
+</script>

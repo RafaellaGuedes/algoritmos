@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista 11 - Exercício 20</title>
+</head>
+
+<body>
+
+    Nome do produto: <input type="text" id="input_nome">
+    Preço do produto: <input type="text" id="input_preco">
+    <button onclick="cadastrar()">Cadastrar</button>
+    <button onclick="atualizar()">Atualizar Estoque</button> <br><br>
+    Filtrar por: <select id="select_filtro">
+        <option value="#">Selecione uma opção</option>
+        <option value="1">Preços acima de</option>
+        <option value="2">Preços abaixo de</option>
+    </select>
+    Valor: <input type="text" id="input_valor">
+    <button onclick="filtrar()">Filtrar Produtos</button>
+    <div id="div_mensagem"></div>
+
+</body>
+
+</html>
+
+<script>
+
+    var lista_nomes = [];
+    var lista_precos = [];
+
+    function cadastrar() {
+        var nome = input_nome.value;
+        var preco = Number(input_preco.value);
+        var tamanho_nome = nome.length;
+
+        if (preco > 0 && tamanho_nome >= 3) {
+            lista_nomes.push(nome);
+            lista_precos.push(preco);
+            div_mensagem.innerHTML = `Produto cadastrado com sucesso`;
+        } else {
+            div_mensagem.innerHTML = `Erro ao cadastrar! O nome deve conter ao menos 3 letras e o preço deve ser positivo`;
+        }
+    }
+
+    function atualizar() {
+        div_mensagem.innerHTML = ``;
+        var soma = 0;
+
+        div_mensagem.innerHTML += `Você tem ${lista_nomes.length} produtos cadastrados em estoque: <br>
+        `;
+
+        for (var i = 0; i < lista_precos.length; i++) {
+            div_mensagem.innerHTML += `${lista_nomes[i]} R$${lista_precos[i]}<br>`;
+            soma += lista_precos[i] - 1;
+        }
+
+        div_mensagem.innerHTML += `Seu estoque vale R$${soma}<br>`;
+    }
+
+    function filtrar() {
+        div_mensagem.innerHTML = "";
+
+        var filtrar = Number(select_filtro.value);
+        var valor = Number(input_valor.value);
+        var soma = 0;
+        var qtd = 0;
+        var texto = "";
+
+        for (var cont = 0; cont <= lista_nomes.length; cont++) {
+            if (filtrar == 1) {
+                if (lista_precos[cont] > valor) {
+                    texto += `${lista_nomes[cont]} R$${lista_precos[cont]}<br>`;
+                    soma += lista_precos[cont];
+                    qtd++;
+                }
+
+            } else if (filtrar == 2) {
+                if (lista_precos[cont] < valor) {
+                    texto += `${lista_nomes[cont]} R$${lista_precos[cont]}<br>`;
+                    soma += lista_precos[cont];
+                    qtd++;
+                }
+            }
+        }
+
+        div_mensagem.innerHTML += `Você tem ${qtd} produtos cadastrados em estoque: <br><br>
+        ${texto}<br>
+        Seu estoque vale R$${soma}<br>`;
+    }
+
+</script>

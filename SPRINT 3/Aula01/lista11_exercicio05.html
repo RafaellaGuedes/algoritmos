@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista 11 - Exercício 05</title>
+</head>
+
+<body>
+
+    Digite seus filmes favoritos (um por vez): <input type="text" id="input_filme"><br>
+    <button onclick="cadastrar()">cadastrar Filme</button><br>
+    <div id="div_mensagem"></div>
+
+</body>
+
+</html>
+
+<script>
+
+    var lista_filmes = [];
+
+    function cadastrar() {
+        var filme = input_filme.value;
+
+        lista_filmes.push(filme);
+
+        if (lista_filmes.length >= 3) {
+            div_mensagem.innerHTML = ` Seu filme favorito: ${lista_filmes[0]} <br>
+            Seu 3º filme favorito: ${lista_filmes[2]} <br>
+            Total de filmes cadastrados: ${lista_filmes.length} <br>`;
+        } else{
+            div_mensagem.innerHTML = ` Seu filme favorito: ${lista_filmes[0]} <br>
+            Seu 3º filme favorito: Ainda não existe <br>
+            Total de filmes cadastrados: ${lista_filmes.length} <br>`;
+        }
+
+    }
+
+</script>

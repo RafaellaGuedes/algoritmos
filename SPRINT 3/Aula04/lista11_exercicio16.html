@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista 11 - Exercício 16</title>
+</head>
+
+<body>
+
+    Nome do produto: <input type="text" id="input_nome"><br><br>
+    Preço de compra: <input type="text" id="input_compra"><br><br>
+    <button onclick="cadastrar()">Cadastrar</button>
+    <button onclick="exibir()">Relatório de estoque</button>
+    <div id="div_mensagem"></div>
+
+</body>
+
+</html>
+
+<script>
+
+    var lista_produtos = [];
+    var lista_precos = [];
+
+    function cadastrar() {
+        var produto = input_nome.value;
+        var preco = Number(input_compra.value);
+
+        lista_produtos.push(produto);
+        lista_precos.push(preco);
+    }
+
+    function exibir() {
+        div_mensagem.innerHTML = "";
+
+        var tamanho_produtos = lista_produtos.length;
+        var tamanho_precos = lista_precos.length;
+        var preco_venda = 0;
+        var soma_compra = 0;
+        var maior_preco = lista_precos[0];
+        var menor_preco = lista_precos[0];
+        var cont = 0;
+        
+        for (var i = 0; i < tamanho_produtos; i++) {
+            preco_venda = lista_precos[i] * 1.25;
+            soma_compra += lista_precos[i];
+            cont++
+            
+            div_mensagem.innerHTML += `Total de produtos: ${tamanho_produtos} <br>
+            Produto ${cont}: ${lista_produtos[i]} <br>
+            Preço de compra: ${lista_precos[i]}. Vender por R$${preco_venda} <br><br>`;
+            
+            var preco_atual = lista_precos[i];
+            
+            if(preco_atual < menor_preco){
+                menor_preco = preco_atual;
+            }
+            
+            if(preco_atual > maior_preco){
+                maior_preco = preco_atual;
+            }
+            
+        }
+
+        var media = soma_compra / tamanho_precos;
+
+        div_mensagem.innerHTML += `Produto mais caro: ${maior_preco} <br>
+        Produto mais barato: ${menor_preco} <br>
+        Soma dos preços: ${soma_compra} <br>
+        Média dos preços: ${media} <br><br>`;
+    }
+
+</script>

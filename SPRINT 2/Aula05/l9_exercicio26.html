@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista 09- Exercício 26</title>
+</head>
+<body>
+
+    Digite um número para limite da contagem(deve ser positivo): <input type="text" id="input_limite"> <br><br>
+    Digite um número para testes de divisibilidade(deve estar entre 1 e o limite): <input type="text" id="input_teste"><br><br>
+    <button onclick="somar()">Somar Números</button>
+    <div id="div_mensagem"></div>
+    
+</body>
+</html>
+
+<script>
+
+    function somar(){
+        var limite = Number(input_limite.value);
+        var teste = Number(input_teste.value);
+        var soma = 0;
+        var texto = ""; 
+
+        if(teste >= 1 && teste <= limite){
+            for(var cont = 0; cont <= limite; cont++){
+                if(cont % teste == 0){
+                    texto += `${cont}<br>`;
+                    soma += cont;
+                }
+            }
+        } else {
+            alert(`O divisor deve ser maior que 0 e estar dentro do limite.`)
+        }
+        div_mensagem.innerHTML = `${texto}<br> Soma dos múltiplos: ${soma}`;
+    }
+
+</script>

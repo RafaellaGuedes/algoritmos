@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estrutura de Repetição</title>
+</head>
+<body>
+    <button onclick="contar()">Contar</button>
+    <button onclick="incrementar()">Icrementar</button>
+    <div id="div_mensagem"></div>
+</body>
+</html>
+
+<script>
+/*     function contar_ate_10(){
+        var contagem = 1;
+        div_mensagem.innerHTML = `${contagem}<br>`
+        div_mensagem.innerHTML += `${contagem+1}<br>`
+        div_mensagem.innerHTML += `${contagem+2}<br>`
+        div_mensagem.innerHTML += `${contagem+3}<br>`
+        div_mensagem.innerHTML += `${contagem+4}<br>`
+    } */
+    
+/*     var contador = 0;
+
+    function contar(){
+        contador ++;
+
+        if(contador <=10){
+            div_mensagem.innerHTML += `${contador}<br>`
+        }
+    } */
+
+    var contador = 1;
+    var limite = 10;
+
+    function incrementar(){
+        for(  ; contador <= limite; contador ++){
+            div_mensagem.innerHTML += `${contador}<br>`
+        }
+
+        limite += 10;
+    }
+
+    function contar(){
+        div_mensagem.innerHTML = ""; /* para limpar div antes de colocar conteúdo *TEM QUE FAZER NA PROVA* */
+
+        var esta_sol;
+
+        if(esta_sol){
+            for (var contador = 1; contador <= 10; contador ++){
+                /* primeiro cria a variável e o segundo é uma condição para ele seguir(if), que faz a decisão e pode usar && e || e terceiro indica a ação à ser repetida após finalizar o ciclo*/
+                div_mensagem.innerHTML += `${contador}<br>`
+            }
+        }
+    }
+
+</script>

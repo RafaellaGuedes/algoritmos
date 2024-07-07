@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista 11 - Exercício 01</title>
+</head>
+<body>
+    
+    Fruta: <input type="text" id="input_fruta"><br>
+    <button onclick="pesquisar()">Pesquisar</button><br>
+    <div id="div_mensagem"></div>
+
+</body>
+</html>
+
+<script>
+
+    var lista_frutas = ['abacaxi', 'mamão', 'abacate', 'maçã', 'pêra', 'uva'];
+
+    function pesquisar() {
+        var fruta = input_fruta.value;
+
+        if (lista_frutas.indexOf(fruta) >= 0) {
+            div_mensagem.innerHTML += `A fruta ${fruta} existe na lista`;
+        } else{
+            div_mensagem.innerHTML += `Não existe a fruta ${fruta} na lista`;
+        }
+
+    }
+
+</script>

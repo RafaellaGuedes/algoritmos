@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista 06 - Exercício 02</title>
+</head>
+<body>
+    
+    Renda do usuário: <input type="text" id="input_rendUsu">
+    Renda famíliar: <input type="text" id="input_rendFam">
+    <button onclick="verificar()">Verificar ajuda</button>
+
+</body>
+</html>
+
+<script>
+
+    function verificar() {
+        var rendaUsuario = Number(input_rendUsu.value);
+        var rendaFamilia = Number(input_rendFam.value);
+
+        if(rendaUsuario <= 1050 && rendaFamilia <=2100){
+            alert("Você terá direito!")
+        } else {
+            alert("Você não terá direito")
+        }
+    }
+
+</script>

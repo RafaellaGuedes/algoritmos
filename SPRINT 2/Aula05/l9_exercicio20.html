@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista 09 - Exercício 20</title>
+</head>
+<body>
+
+    Depósitos feitos no banco: <input type="text" id="input_quantidade"><br><br>
+    Valor do depósito: <input type="text" id="input_valor"><br><br>
+    <button onclick="acompanhar()">Acompnhar grana</button>
+    <div id="div_mensagem"></div>
+    
+</body>
+</html>
+
+<script>
+
+    function acompanhar(){
+        var quantidade = Number(input_quantidade.value);
+        var valor = Number(input_valor.value);
+        var total = valor;
+        var texto = "";
+
+        div_mensagem.innerHTML = "";
+
+        for(var cont = 1; cont <= quantidade; cont++){
+            if(cont == 1){
+                texto += `${cont}º Mês: R$ ${total}<br>`
+            } else if (cont % 3 == 0){
+                total += valor;
+                total += total * 0.01;
+                texto += `${cont}º Mês: R$ ${total}<br>`
+            } else{
+                total += valor;
+                texto += `${cont}º Mês: R$ ${total}<br>`
+            }
+            
+        }
+        texto += `Total guardado: R$ ${total}<br>`
+        div_mensagem.innerHTML = texto;
+    }
+
+</script>

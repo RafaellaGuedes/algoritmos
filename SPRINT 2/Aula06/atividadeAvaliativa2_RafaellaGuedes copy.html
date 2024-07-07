@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade Avaliativa 2</title>
+</head>
+
+<body>
+
+    Qual episódio deseja começar a assistir? <input type="number" id="input_episodio">
+
+    <br><br>
+
+    Quanto tempo você tem disponível? <input type="number" min="1" max="1100" id="input_tempoDisp">
+
+    <br><br>
+
+    Tempo em horas ou minutos? <select name="tempo" id="select_medTempo">
+        <option value="0">Selecione uma opção</option>
+        <option value="1">Horas</option>
+        <option value="2">Minutos</option>
+    </select>
+
+    <br><br>
+
+    Deseja pular a abertura? <select name="abertura" id="select_abertura">
+        <option value="0">Selecione uma opção</option>
+        <option value="1">Sim</option>
+        <option value="2">Não</option>
+    </select>
+
+    <br><br>
+
+    Deseja pular o encerramento? <select name="encerramento" id="select_encerramento">
+        <option value="0">Selecione uma opção</option>
+        <option value="1">Sim</option>
+        <option value="2">Não</option>
+    </select>
+
+    <br><br>
+
+    <button onclick="assistir()">Assitir Episódios</button>
+
+    <div id="div_mensagem"></div>
+
+</body>
+
+</html>
+
+<script>
+
+    function assistir() {
+        div_mensagem.innerHTML = "";
+        var episodio = Number(input_episodio.value);
+        var tempoDisponivel = Number(input_tempoDisp.value);
+        var medidaTempo = Number(select_medTempo.value);
+        var abertura = Number(select_abertura.value);
+        var encerramento = Number(select_encerramento.value);
+        var tempoEp = 24;
+        var texto = "";
+        
+        if (episodio < 1 || episodio > 1100) {
+            alert("Episódio inválido! Os episódios começam no 1 e termiam no 1100.")
+        } else {
+            
+            if (medidaTempo == 1) {
+                tempoDisponivel *= 60;
+            }
+            if (abertura == 1 && encerramento == 1) {
+                tempoEp -= 4;
+            } else if (abertura == 1 || encerramento == 1) {
+                tempoEp -= 2
+            }
+            
+            epsAssistidos = tempoDisponivel / tempoEp;
+
+            for (var cont = episodio; tempoDisponivel > 0; cont++) {
+                texto += `<br><b>Episódio: ${cont}</b><br>`
+                for (var i = 1; i <= tempoEp; i++) {
+                    if (tempoDisponivel > 0) {
+                        if (abertura == 2 && i <= 2) {
+                            texto += `Minuto: ${i} - Assistindo abertura<br>`
+                        } else if (encerramento == 2 && i > (tempoEp - 2)) {
+                            texto += `Minuto: ${i} - Assistindo encerramento<br>`
+                        } else {
+                            texto += `Minuto: ${i} - Assistindo episódio<br>`
+                        }
+                    }
+                    tempoDisponivel--;
+                }
+            }
+        }
+
+        texto += `<br><br><b>Fim dos episódios!</b><br> Foram assistidos: ${epsAssistidos} episódios.`;
+
+        div_mensagem.innerHTML = texto;
+    }
+
+</script>

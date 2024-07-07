@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista 11 - Exercício 13</title>
+</head>
+<body>
+
+    Indique o resultado do jogo: <select name="resultado" id="select_resultado">
+        <option value="#">Selecione uma opção</option>
+        <option value="vitoria">Vitória</option>
+        <option value="empate">Empate</option>
+        <option value="derrota">Derrota</option>
+    </select> <br><br>
+    <button onclick="registrar()">Registrar Jogo</button> <br><br>
+    Indique qual jogo deseja saber o resultado: <input type="text" id="input_jogo" oninput="exibir()">
+    <div id="div_mensagem"></div>
+    
+</body>
+</html>
+
+<script>
+
+    var lista_jogo = [];
+
+    function registrar(){
+        var resultado = select_resultado.value;
+
+        lista_jogo.push(resultado);
+
+        atualizar();
+    }
+
+    function atualizar(){
+        div_mensagem.innerHTML = "";
+
+        var vitoria = 0;
+        var empate = 0;
+        var derrota = 0;
+       
+        for(var i = 0; i < lista_jogo.length; i++){
+            if(lista_jogo[i] == "vitoria"){
+                vitoria++;
+            } else if(lista_jogo[i] == "empate"){
+                empate++;
+            } else {
+                derrota++;
+            }
+        }
+
+        var pontos = (vitoria *3) + (empate * 1);
+        var aproveitamento = (pontos / (lista_jogo.length * 3) * 100);
+
+        div_mensagem.innerHTML += ` O time teve: ${vitoria} vitórias, ${empate} empates, ${derrota} derrotas  
+        Pontuação total: ${pontos} pontos  
+        Aproveitamento: ${aproveitamento}%`;
+
+    }
+
+    function exibir(){
+        var jogo = input_jogo.value;
+        var resultado = lista_jogo[jogo - 1];
+        var mensagem_resultado = "";
+
+        if(jogo > 0 && jogo <= lista_jogo.length){
+            if(resultado == "vitoria") {
+                mensagem_resultado = "Ganhou"
+            } else if(resultado == "empate") {
+                mensagem_resultado = "Empatou"
+            } else {
+                mensagem_resultado = "Perdeu"
+            }
+
+            div_mensagem.innerHTML = `No ${jogo}º jogo, o time ${mensagem_resultado} `;
+        } else {
+            div_mensagem.innerHTML = ` Não foi cadastrado um ${jogo}º jogo`;
+        }
+    }
+
+</script>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista 09 - Exercício 14</title>
+</head>
+<body>
+    
+    Início: <input type="text" id="input_inicio"><br><br>
+    Final: <input type="text" id="input_final"><br><br>
+    <button onclick="exibir()">Curto 3 e 5!</button>
+    <div id="div_mensagem"></div>
+
+</body>
+</html>
+
+<script>
+
+    function exibir(){
+        var inicio = Number(input_inicio.value);
+        var final = Number(input_final.value);
+
+        for(inicio; inicio <= final; inicio++){
+            if(inicio % 3 == 0 && inicio % 5 == 0){
+                div_mensagem.innerHTML += `É TRI!É PENTA!<br>`
+            }
+            if(inicio % 3 == 0){
+                div_mensagem.innerHTML += `É TRI!<br>`
+            } else if(inicio % 5 == 0){
+                div_mensagem.innerHTML += `É PENTA!<br>`
+            } else {
+                div_mensagem.innerHTML += `${inicio}<br>`
+            }
+        }
+    }
+
+</script>
